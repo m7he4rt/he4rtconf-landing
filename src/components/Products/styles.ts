@@ -1,5 +1,22 @@
 import styled, { css } from 'styled-components'
 
+export const Col = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2rem;
+
+  p {
+    margin: 1rem 0;
+  }
+`
+
+export const WrapperSubItem = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
+
 export const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -7,8 +24,10 @@ export const ImageWrapper = styled.div`
   width: 100%;
   flex-wrap: wrap;
 
-  > img {
-    width: 20rem;
+  ${Col} {
+    > img {
+      width: 20rem;
+    }
   }
 `
 
@@ -41,8 +60,6 @@ export const SubItem = styled.div`
 
     img {
       width: 6rem;
-      margin-right: 1rem;
-      margin-top: 1rem;
     }
 
     .mug {
