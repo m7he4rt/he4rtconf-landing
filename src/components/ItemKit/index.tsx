@@ -12,6 +12,14 @@ export type ItemKitProps = {
   value: number
   stock: string
   shirts: number[]
+  limits: {
+    shirt: number
+    bottons: number
+    keychains: number
+    stickers: number
+    mugs: number
+  }
+  id: number
 }
 
 const ItemKit = ({
@@ -19,7 +27,8 @@ const ItemKit = ({
   tag,
   items,
   value,
-  stock
+  stock,
+  id
 }: Omit<ItemKitProps, 'shirts'>) => (
   <div>
     <Title level={2} color="white" fontWeight="bold" size="medium">
@@ -43,7 +52,7 @@ const ItemKit = ({
           + Frete
         </Title>
       </div>
-      <IconWrapper>
+      <IconWrapper href={`/loja/${id}`}>
         <AiOutlineShoppingCart />
       </IconWrapper>
     </ValueWrapper>
